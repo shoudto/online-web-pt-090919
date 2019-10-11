@@ -16,5 +16,3 @@ Ruby-OO-One-To-Many-Relationships` directory._
 * Relationships
   * User has many Tweets
   * Tweet belongs to a User
-  * Group has many Tweets through Users
-  * Tweets belongs a Group through Users
