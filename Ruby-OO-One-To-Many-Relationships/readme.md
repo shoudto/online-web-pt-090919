@@ -1,3 +1,6 @@
+_to load our classes into a console to test out, run `ruby run.rb` in the terminal from the `
+Ruby-OO-One-To-Many-Relationships` directory._
+
 * Create a User class. The class should have these methods:
   * `User#initialize` which takes a username
   * `User#username` reader method
@@ -9,12 +12,7 @@
   * `Tweet#user` that returns an instance of the user class
   * `Tweet.all` that returns all the Tweets created.
   * `Tweet#username` that returns the username of the tweet's user
-
-  # User has many Tweets
-  # Tweet belongs to a User
-
-  # User belongs to a Group
-  # Group has many Users
   
-  # Group has many Tweets through Users
-  # Tweets belongs a Group through Users
+* Relationships
+  * User has many Tweets
+  * Tweet belongs to a User
