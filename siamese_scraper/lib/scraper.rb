@@ -16,8 +16,3 @@ class Scraper
     end
 
 end
-
-siamese_scraper = Scraper.new('https://va.siameserescue.org/webbuild.php?type=adoptme&page=1&state=')
-siamese_scraper.scrape_cats
-
-binding.pry
