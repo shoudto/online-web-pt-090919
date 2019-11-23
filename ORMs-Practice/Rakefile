@@ -1,0 +1,26 @@
+require 'rake'
+require_relative 'config/environment'
+
+desc 'a console to play with foxes and such'
+# here we are specifying the cheer_me_up task as a dependency to fox_playground
+# cheer_me_up will be run first
+task :fox_playground => :cheer_me_up do
+    Pry.start
+end
+
+task :cheer_me_up do
+    puts 'you are doing a GREAT job!!!!'
+end
+
+# to run the create_table task: rake create_table[farmers,name,text]
+task :create_table, [:table_name, :column_name, :column_datatype] do |task, args|
+    binding.pry
+    DB[:conn].execute("CREATE TABLE #{args.table_name} (#{args.column_name} #{args.column_datatype});")
+end
+
+# rake name[ally,kadel]
+task :name, [:first_name, :last_name] do |t, args|
+    puts "First name is #{args.first_name}"
+    puts "Last  name is #{args.last_name}"
+    # binding.pry
+  end
