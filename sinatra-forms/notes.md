@@ -31,11 +31,11 @@
 * Adhering to conventions, best practices, and protocols about structuring data lets us send and receive information effectively on the web
 
 # Describe the HTTP Request Cycle
-user/client/browser navigate to url or click something => controller - routing => model - ORM <=> db
+[look at diagram](https://github.com/allisonkadel/online-web-pt-090919/edit/master/sinatra-forms/Sinatra - HTTP Request Cycle.png)
 
 # What are the RESTful routes? (url, http verb, and controller action)
-`/books` => `GET` => `index`
-`/books/:id` => `GET` => `show`
-`/books/:id` => `PUT` => `update`
-`/books/new` => `GET` => `new`
-`/books` => `POST` => `create`
+*`/books` => `GET` => `index`
+*`/books/:id` => `GET` => `show`
+*`/books/:id` => `PUT` => `update`
+*`/books/new` => `GET` => `new`
+*`/books` => `POST` => `create`
