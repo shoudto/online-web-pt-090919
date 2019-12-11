@@ -31,7 +31,7 @@
 * Adhering to conventions, best practices, and protocols about structuring data lets us send and receive information effectively on the web
 
 # Describe the HTTP Request Cycle
-[look at diagram]https://github.com/allisonkadel/online-web-pt-090919/blob/master/sinatra-forms/Sinatra%20-%20HTTP%20Request%20Cycle.png)
+[look at diagram](https://github.com/allisonkadel/online-web-pt-090919/blob/master/sinatra-forms/Sinatra%20-%20HTTP%20Request%20Cycle.png)
 
 # What are the RESTful routes? (url, http verb, and controller action)
 *`/books` => `GET` => `index`
