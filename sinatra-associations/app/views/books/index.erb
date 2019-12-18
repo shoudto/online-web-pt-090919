@@ -1,0 +1,11 @@
+<h1>Books!!!!</h1>
+
+<% @books.each do |book| %>
+    <h2><%= book.title %></h2>
+    <% if !book.author.nil? %>
+        <h3>by <a href=<%="/authors/#{book.author.id}"%>><%= book.author.name %></a></h3>
+    <% else %>
+        <h3>By anonymous...</h3>
+    <% end %>
+    <p><%= book.snippet %></p>
+<% end %>
