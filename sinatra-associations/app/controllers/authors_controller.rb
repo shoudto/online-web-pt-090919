@@ -32,24 +32,19 @@ class AuthorsController < ApplicationController
   end
 
   # Edit
-  get '/authors/:id/edit' do
-    @author = Author.find(params[:id])
+    get '/authors/:id/edit' do
+      @author = Author.find(params[:id])
 
-    erb :'authors/edit'
-  end
-
-  # Update
-  patch '/authors/:id' do
-    params.delete("_method")
-    
-    @author = Author.find(params[:id])
-
-    if @author.update params
-      redirect "authors/#{@author.id}"
-    else
       erb :'authors/edit'
     end
-  end
+
+
+  # Update
+    patch '/authors/:id' do
+      author = Author.find_by(params[:id])
+      author.update(params["author"])
+      redirect '/authors'
+    end
 
   # Delete
   delete '/authors/:id' do

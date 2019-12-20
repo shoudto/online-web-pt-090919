@@ -23,7 +23,6 @@ class BooksController < ApplicationController
 
   # Create
   post '/books' do
-    binding.pry
     @book = Book.new(params)
 
     if @book.save
