@@ -7,5 +7,5 @@ development:
 production:
   adapter: postgresql
   encoding: unicode
-  database: production
+  database: plantiful-palate
   pool: 2
