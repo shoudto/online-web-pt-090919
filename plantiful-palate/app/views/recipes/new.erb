@@ -1,0 +1,38 @@
+<div class="recipe-form-container">
+    <h1>Create a Recipe</h1>
+    <i>Add existing ingredients or create your own</i>
+    <p class="error"><%= @errors %></p>
+    <form action="/recipes" method="post">
+        <div class="form">
+            <div class="text-inputs">
+                <label>Title</label>
+                <input type="text" placeholder="Name of recipe" name="recipe[title]">
+                <label>Ingredients</label>
+                <input type="text" placeholder="Ingredient Name" name="ingredients[][name]">
+                <input type="text" placeholder="Link to Image" name="ingredients[][image]"><br>
+                <input type="text" placeholder="Ingredient Name" name="ingredients[][name]">
+                <input type="text" placeholder="Link to Image" name="ingredients[][image]"><br>
+                <input type="text" placeholder="Ingredient Name" name="ingredients[][name]">
+                <input type="text" placeholder="Link to Image" name="ingredients[][image]"><br>
+                <input type="text" placeholder="Ingredient Name" name="ingredients[][name]">
+                <input type="text" placeholder="Link to Image" name="ingredients[][image]"><br>
+                <input type="text" placeholder="Ingredient Name" name="ingredients[][name]">
+                <input type="text" placeholder="Link to Image" name="ingredients[][image]"><br>
+                <label>Method</label>
+                <textarea name="recipe[method]" placeholder="Instructions for making this recipe"></textarea>
+                <label>Image URL</label>
+                <input type="text" placeholder="Link to recipe image" name="recipe[image]">
+            </div>
+            <div class="checkboxes">
+                <% @ingredients.each.with_index do |ingredient, index| %>
+                    <div class="checkbox">
+                        <input type="checkbox" name="recipe[ingredient_ids][]" value="<%= ingredient.id %>"><%= ingredient.name %></input>
+                    </div>
+                <% end %>
+            </div>
+            <div class="submit">
+                <button class="button" type="submit">Add Recipe</button>
+            </div>
+        </div>
+    </form>
+</div>

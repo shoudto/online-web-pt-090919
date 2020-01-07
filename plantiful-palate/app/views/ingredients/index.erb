@@ -1,0 +1,12 @@
+<div class="recipes-container ingredients-container">
+    <h1>Ingredients</h1>
+    <i>See what others are cooking with!</i>
+        <div class="recipe-cards">
+        <% @ingredients.each do |ingredient| %>
+            <div class="recipe-card">
+                <h2><%= ingredient.name %></h2>
+                <img src="<%= ingredient.image %>" alt="recipe">
+            </div>
+        <% end %>
+    </div>
+</div>

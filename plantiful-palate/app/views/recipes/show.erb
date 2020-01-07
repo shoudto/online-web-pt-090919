@@ -1,0 +1,38 @@
+<div class="recipe-container">
+    <div class="title"><h1><%= @recipe.title %></h1></div>
+    <div class="image"><img src="<%= @recipe.image %>" alt="recipe"></div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <div class="ingredient-cards">
+            <% if @recipe.ingredients.empty? %>
+                <i>No ingredients added yet</i>
+            <% else %>
+                <% @recipe.ingredients.each do |ingredient| %>
+                    <div class="ingredient-card">
+                        <p><%= ingredient.name %></p>
+                        <img src="<%= ingredient.image %>">
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+    <div class="method">
+        <h2>Method</h2>
+        <p><%= @recipe.method %></p>
+    </div>
+    <% if @recipe.user == current_user %>
+        <div class="buttons">
+            <form action="/recipes/<%= @recipe.id %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <button class="button" type="submit">Delete Recipe</button>
+            </form>
+            <button class="button" href="/recipes/<%= @recipe.id %>/edit">Edit Recipe</button>
+        </div>
+        
+    <% end %>
+    <div class="posted-by">
+        <% if @recipe.user %>
+            <i>Posted by <%= @recipe.user.username %></i>
+        <% end %>
+    </div>
+</div>

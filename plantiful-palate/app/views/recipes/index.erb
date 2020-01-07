@@ -1,0 +1,25 @@
+<div class="recipes-container">
+    <h1>Recipes</h1>
+    <i>See what others are cooking!</i>
+    <div class="button"><a href="/recipes/new">Create a Recipe</a></div>
+    <div class="recipe-cards">
+        <% @recipes.each do |recipe| %>
+            <div class="recipe-card">
+                <a href="/recipes/<%= recipe.id %>">
+                    <h2><%= recipe.title %></h2>
+                    <img src="<%= recipe.image %>" alt="recipe">
+                    <div>
+                    <%= recipe.ingredients.map { |ingredient| ingredient.name }.join(', ') %>
+                    </div>
+                    <% if current_user == recipe.user %>
+                    <a href="/recipes/<%= recipe.id %>/edit">
+                        <div class="button">
+                            Edit
+                        </div>
+                    </a>
+                    <% end %>
+                </a>
+            </div>
+        <% end %>
+    </div>
+</div>

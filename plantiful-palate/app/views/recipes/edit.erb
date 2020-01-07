@@ -1,0 +1,39 @@
+<div class="recipe-form-container">
+    <h1>Edit Recipe for <%= @recipe.title %></h1>
+    <p class="error"><%= @error %></p>
+    <form action="/recipes/<%=@recipe.id%>" method="post">
+        <div class="form">
+            <div class="text-inputs">
+                <input type="hidden" name="_method" value="patch">
+                <label>Title</label>
+                <input type="text" name="recipe[title]" value="<%= @recipe.title %>">
+                <label>Change existing ingredients or create more</label>
+                <label>Ingredients</label>
+                <input type="text" placeholder="Ingredient Name" name="ingredients[][name]">
+                <input type="text" placeholder="Link to Image" name="ingredients[][image]"><br>
+                <input type="text" placeholder="Ingredient Name" name="ingredients[][name]">
+                <input type="text" placeholder="Link to Image" name="ingredients[][image]"><br>
+                <input type="text" placeholder="Ingredient Name" name="ingredients[][name]">
+                <input type="text" placeholder="Link to Image" name="ingredients[][image]"><br>
+                <input type="text" placeholder="Ingredient Name" name="ingredients[][name]">
+                <input type="text" placeholder="Link to Image" name="ingredients[][image]"><br>
+                <input type="text" placeholder="Ingredient Name" name="ingredients[][name]">
+                <input type="text" placeholder="Link to Image" name="ingredients[][image]"><br>
+                <label>Method</label>
+                <textarea name="recipe[method]"><%= @recipe.method %></textarea>
+                <label>Image URL</label>
+                <input type="text" name="recipe[image]" value="<%= @recipe.image %>">
+            </div>
+            <div class="checkboxes">
+                <% @ingredients.each.with_index do |ingredient, index| %>
+                    <div class="checkbox">
+                        <input type="checkbox" <%= "checked" if @recipe.ingredients.include?(ingredient) %> name="recipe[ingredient_ids][]" value="<%= ingredient.id %>"><%= ingredient.name %></input>
+                    </div>
+                <% end %>
+            </div>
+            <div class="submit">
+                <button class="button" type="submit">Update Recipe</button>
+            </div>
+        </div>
+    </form>
+</div>

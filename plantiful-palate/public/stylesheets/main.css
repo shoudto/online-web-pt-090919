@@ -1,0 +1,212 @@
+.header {
+  display: flex;
+  background-color: whitesmoke;
+  position: fixed;
+  width: 100%;
+  opacity: 0.95;
+  box-shadow: 5px 2px #ebebeb;
+  z-index: 10; }
+  .header .title {
+    color: white;
+    background-color: lightseagreen;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 30px; }
+  .header .username {
+    margin: auto 5px auto auto;
+    flex: 1,2; }
+  .header .nav {
+    display: flex;
+    margin: 0 5px 0 5px; }
+    .header .nav div {
+      padding: 10px;
+      background-color: white;
+      margin: 10px;
+      border-radius: 5px; }
+      .header .nav div:hover {
+        cursor: pointer;
+        background-color: grey;
+        transition: 0.5s ease; }
+        .header .nav div:hover a {
+          color: white; }
+
+.wrapper {
+  padding: 90px 30px 70px;
+  text-align: center;
+  min-height: 560px; }
+  .wrapper h1 {
+    color: lightseagreen; }
+  .wrapper .welcome-container .background-image {
+    filter: opacity(0.4);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0; }
+  .wrapper .welcome-container .welcome-text {
+    background-color: rgba(255, 255, 255, 0.6);
+    position: fixed;
+    bottom: 40%;
+    left: 5%;
+    padding: 20px; }
+  .wrapper .recipes-container .recipe-cards {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 5%;
+    grid-row-gap: 20px;
+    background-color: #fcfcfc; }
+    .wrapper .recipes-container .recipe-cards .recipe-card {
+      color: grey;
+      box-shadow: 0 30px 40px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      background-color: whitesmoke; }
+      .wrapper .recipes-container .recipe-cards .recipe-card h2 {
+        color: lightseagreen; }
+      .wrapper .recipes-container .recipe-cards .recipe-card .button a {
+        color: whitesmoke; }
+      .wrapper .recipes-container .recipe-cards .recipe-card a {
+        color: grey; }
+      .wrapper .recipes-container .recipe-cards .recipe-card img {
+        max-width: 100%;
+        border-radius: 10px; }
+      .wrapper .recipes-container .recipe-cards .recipe-card:hover {
+        background-color: rgba(32, 178, 170, 0.7);
+        color: whitesmoke;
+        cursor: pointer;
+        transition: 0.5s ease; }
+        .wrapper .recipes-container .recipe-cards .recipe-card:hover a {
+          color: whitesmoke; }
+        .wrapper .recipes-container .recipe-cards .recipe-card:hover h2 {
+          color: whitesmoke; }
+  .wrapper .ingredients-container .recipe-cards {
+    padding: 30px;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-column-gap: 1.3%; }
+    .wrapper .ingredients-container .recipe-cards img {
+      border-radius: 10px; }
+  .wrapper .recipe-container {
+    display: grid;
+    grid-gap: 20px;
+    padding: 30px;
+    background-color: rgba(31, 178, 170, 0.2); }
+    .wrapper .recipe-container p, .wrapper .recipe-container h2 {
+      color: grey; }
+    .wrapper .recipe-container .title {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2; }
+    .wrapper .recipe-container .image {
+      margin: auto;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3; }
+      .wrapper .recipe-container .image img {
+        box-shadow: 0 30px 40px rgba(0, 0, 0, 0.1);
+        border-radius: 10%; }
+    .wrapper .recipe-container .ingredients {
+      padding: 10px;
+      background-color: white;
+      border-radius: 10px;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 4; }
+      .wrapper .recipe-container .ingredients .ingredient-cards {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap; }
+    .wrapper .recipe-container .method {
+      padding: 10px;
+      background-color: white;
+      border-radius: 10px;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3; }
+    .wrapper .recipe-container .buttons {
+      display: flex;
+      margin: auto;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 4;
+      grid-row-end: 5; }
+    .wrapper .recipe-container .posted-by {
+      margin: auto; }
+  .wrapper .recipe-form-container {
+    padding: 20px; }
+    .wrapper .recipe-form-container .form {
+      display: grid;
+      grid-template-columns: 48% 48%;
+      grid-gap: 4%; }
+      .wrapper .recipe-form-container .form label {
+        display: block;
+        color: lightseagreen;
+        padding: 10px; }
+      .wrapper .recipe-form-container .form input, .wrapper .recipe-form-container .form textarea {
+        border: 2px solid lightgrey;
+        font-size: 13px;
+        padding: 10px;
+        color: grey; }
+        .wrapper .recipe-form-container .form input:hover, .wrapper .recipe-form-container .form textarea:hover {
+          background-color: lightgrey;
+          cursor: pointer; }
+      .wrapper .recipe-form-container .form textarea {
+        min-height: 100px;
+        min-width: 80%;
+        max-width: 100%; }
+      .wrapper .recipe-form-container .form .text-inputs {
+        grid-column-start: 1;
+        grid-column-end: 2; }
+      .wrapper .recipe-form-container .form .checkboxes {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: left; }
+      .wrapper .recipe-form-container .form .submit {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3; }
+
+.footer {
+  background-color: whitesmoke;
+  text-align: center;
+  height: 20px;
+  z-index: 10; }
+
+.button {
+  font-size: 14px;
+  background-color: grey;
+  color: whitesmoke;
+  border-radius: 5px;
+  padding: 5px;
+  width: 120px;
+  margin: 15px auto; }
+  .button:hover {
+    background-color: lightgrey;
+    cursor: pointer; }
+  .button a {
+    color: whitesmoke; }
+
+a {
+  text-decoration: none;
+  color: lightseagreen; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+h1 {
+  margin: 0; }
+
+.green-text {
+  color: lightseagreen; }
+
+.error {
+  color: red; }
+
+/*# sourceMappingURL=main.css.map */

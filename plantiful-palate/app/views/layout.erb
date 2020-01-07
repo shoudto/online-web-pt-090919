@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+    <title>PlantifulPalate</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="title"><h1>Plantiful Palate</h1></div>
+      <div class="username">
+        <i>welcome, <%= current_user.username %></i>
+      </div>
+      <div class="nav">
+        <div><a href="/">Home</a></div>
+        <% if logged_in? %>
+          <div><a href="/cookbook">Cookbook</a></div>
+          <div><a href="/pantry">Pantry</a></div>
+          <div><a href="/recipes">Recipes</a></div>
+          <div><a href="/ingredients">Ingredients</a></div>
+          <div><a href="/logout">Log Out</a></div>
+        <% else %>
+          <div><a href="/signup">Sign Up</a></div>
+          <div><a href="/login">Log In</a></div>
+        <% end %>
+      </div>
+    </div>
+      <div class="wrapper">
+
+          <%= yield %>
+
+      </div>
+    <footer>
+      <div class="footer">
+        <small>&copy; 2019 <strong>PlantifulPalate</strong></small>
+      </div>
+    </footer>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!--[if lt IE 7]>
+      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+      <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+    <![endif]-->
+  </body>
+</html>
