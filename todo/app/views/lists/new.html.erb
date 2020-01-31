@@ -1,0 +1,32 @@
+<h1> Create a new list </h1>
+
+<p> Using form_tag: </p>
+
+<%= form_tag do %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+<% end %>
+
+<p> Will generate this html: </p>
+
+<%= '<form action="/lists" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="nNV2oAXb3csVa7bqq76wG6tzm1RB8Hd2gAFwpGvb7Pjuj/H2qKX3q8+k4ib3NjQMF7N9W3BIWTKVFMQ+cTUdqQ==">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name">
+</form>' %>
+
+<p> Using form_for: </p>
+
+<%= form_for @list do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+<% end %>
+
+<p> Will generate this html: </p>
+
+<%= '<form class="new_list" id="new_list" action="/lists" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="AqnbAfdodK0BJ8cLz0xzy84p1C3jSB4gs4lRnpXtuC5w81xXWhZezdvok8eTxPfccukyItLwMGSmnOUEjwNJfw==">
+<label for="list_name">Name</label>
+<input type="text" name="list[name]" id="list_name">
+</form>' %>
+
+<p>What extra attributes do you get with the form_for? How could this be helpful when you deal with params in the controller? What would you have to do with the form_tag when you are entering data for multiple models in your forms?</p>
+<i>Use the browser developer inspector to look at the html for yourself!</i>
