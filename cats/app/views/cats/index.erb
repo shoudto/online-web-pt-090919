@@ -1,0 +1,10 @@
+<h1>All of the cats, all of the cats</h1>
+
+<% @cats.each do |cat| %>
+    <div>
+        <h2><%=cat.name%></h2>
+        <h3><%=cat.breed%></h3>
+        <%= link_to "Edit", edit_cat_path(cat) %>
+        <%= button_to "Delete", cat, method: "delete", data: { confirm: "you sure? #{cat.name} really loves you..." } %>
+    </div>
+<% end %>

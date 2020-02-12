@@ -1,0 +1,4 @@
+<%= @owner.name %> has these cats:
+<% @owner.cats.each do |cat| %>
+    <%= cat.name %>
+<% end %>

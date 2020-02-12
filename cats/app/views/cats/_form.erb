@@ -1,0 +1,23 @@
+<% if @cat.errors.any? %>
+    <p><%= pluralize(@cat.errors.count, "error") %> found! The record can't be saved.</p>
+    <ul>
+    <% @cat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<!-- How can we associate the newly created cat with an existing OR newly created shelter? -->
+<!-- What helper method will help us prevent a duplicate shelter from being created? -->
+
+<%= form_for @cat do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+    <%= f.collection_select :shelter_id, Shelter.all, :id, :location, :prompt => true %>
+    <%= f.text_field :shelter_location %>
+    <%= f.submit %>
+<% end %>
+
+    

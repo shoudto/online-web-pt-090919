@@ -1,0 +1,21 @@
+<h1> Create a new shelter and add some cats </h1>
+
+<% if @shelter.errors.any? %>
+    <p><%= pluralize(@shelter.errors.count, "error") %> found! The record can't be saved.</p>
+    <ul>
+    <% @shelter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<!-- How can we associate the newly created shelter with a few newly created cats? -->
+<!-- What do we need to add to the model and to the controller? -->
+
+<!-- How can we associate the newly created shelter with an existing owner? -->
+
+<%= form_for @shelter do |f| %>
+    <%= f.label :shelter_location %>
+    <%= f.text_field :location %>
+    <%= f.submit %>
+<% end %>
